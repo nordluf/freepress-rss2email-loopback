@@ -1,0 +1,13 @@
+version: '3'
+
+services:
+  rss2email:
+    image: nordluf/freepress-rss2email-loopback
+    restart: unless-stopped
+    volumes:
+      - <put here path to your template>:/srv/www/<put here the name of your template>.hbs
+    environment:
+      - R2M_USERNAME=<username>
+      - R2M_PASSWORD=<password>
+      - R2M_RSS_FEED=<feed>
+      #- R2M_TEMPLATE='yourtemplate'
