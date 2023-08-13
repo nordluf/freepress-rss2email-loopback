@@ -1,0 +1,42 @@
+{
+  "name": "moscowtimes-mailnews",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.mjs",
+  "scripts": {
+    "start": "node index.mjs",
+    "lint": "semistandard",
+    "pre-commit": "npm run lint && npm audit --audit-level=high"
+  },
+  "keywords": [],
+  "license": "JSON",
+  "husky": {
+    "hooks": {
+      "commit-msg": "commitlint -e",
+      "pre-commit": "npm run pre-commit"
+    }
+  },
+  "commitlint": {
+    "extends": [
+      "@commitlint/config-conventional"
+    ]
+  },
+  "semistandard": {
+    "env": [
+      "mocha"
+    ]
+  },
+  "dependencies": {
+    "dotenv": "^16.3.1",
+    "imap-simple": "^5.1.0",
+    "nodemailer": "^6.9.4",
+    "nodemailer-express-handlebars": "^6.1.0",
+    "rss-to-json": "^2.1.1"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^17.0.0",
+    "@commitlint/config-conventional": "^17.0.0",
+    "husky": "^4.0.0",
+    "semistandard": "^17.0.0"
+  }
+}
