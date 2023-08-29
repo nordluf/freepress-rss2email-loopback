@@ -28,9 +28,9 @@ function getFrom (message) {
   }
   if (emails.length > 1 || subjects.length > 1) {
     const err = new Error('More than one email in the field From');
-    console.log(err);
-    console.log(emails);
-    console.dir(message, { depth: null });
+    console.error(err);
+    console.error(emails);
+    console.error(message);
     throw err;
   }
   return [emails[0], subjects[0]];

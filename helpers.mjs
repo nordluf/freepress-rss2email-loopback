@@ -20,7 +20,8 @@ export const imapConfig = {
   host: env.R2M_IMAP_HOST || 'imap.gmail.com',
   port: env.R2M_IMAP_PORT || 993,
   tls: true,
-  tlsOptions: { rejectUnauthorized: false }
+  tlsOptions: { rejectUnauthorized: false },
+  authTimeout: 10000
 };
 
 if (!imapConfig.user || !imapConfig.password) {
